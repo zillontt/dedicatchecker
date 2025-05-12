@@ -1,44 +1,64 @@
-This is a powerful Python tool for automatically checking login credentials across various server ports (SSH, HTTP, and more). Ideal for system administrators, penetration testers, and IT professionals.
+# 🛡️ Server Credential Checker
 
-🔧 Features:
-Checks SSH access (port 22) using paramiko.
+A powerful Python tool for scanning and checking server credentials over multiple ports. Designed for system administrators, penetration testers, and IT professionals.
 
-Checks HTTP access (ports 80 and 443) with basic auth via aiohttp.
+---
 
-Verifies if various ports are open using socket (e.g., 22, 80, 443, 3389, 1080, 8080, etc.).
+## 🔧 Features
 
-Asynchronous and multithreaded server scanning.
+- ✅ Check **SSH access** (port 22) using `paramiko`
+- 🌐 Check **HTTP access** (ports 80 and 443) using `aiohttp` with basic authentication
+- 🔍 Scan and validate **open ports** (22, 80, 443, 3389, 1080, 8080, 3128, 9000, 8081, etc.)
+- ⚡ **Asynchronous** and **multithreaded** for high-speed scanning
+- 📁 Select your server list via a **GUI file dialog**
+- 🪟 Compatible with **Windows 8.1 and earlier**
+- 📊 Real-time progress with **tqdm**
+- 💾 Automatically saves valid credentials to `valid_proxies.txt`
 
-GUI file picker for selecting server list (.txt).
+---
 
-Compatible with Windows 8.1 and earlier.
+## 📁 Input File Format
 
-Real-time progress bar using tqdm.
+A simple `.txt` file containing one IP or IP:Port per line:
 
-Automatically saves valid credentials to valid_proxies.txt.
-
-📁 Input File Format:
-A simple .txt file with IP addresses or IP:Port combinations, e.g.:
-
-makefile
-Копировать
-Редактировать
 192.168.0.1
 192.168.0.2:22
 10.0.0.1:443
-🚀 How to Use:
-Install the required libraries:
 
-bash
+yaml
 Копировать
 Редактировать
-pip install paramiko aiohttp tqdm
-Run the script:
 
+---
+
+## 🚀 How to Use
+
+### 1. Install Dependencies
+
+```bash
+pip install paramiko aiohttp tqdm
+2. Run the Script
 bash
 Копировать
 Редактировать
 python script_name.py
-Choose your server list file in the dialog window.
+3. Select Input File
+A dialog will appear — choose your .txt file with server addresses.
 
-Wait for the scan to complete — results will be saved to valid_proxies.txt
+4. Wait for Results
+The script will attempt various default username and password combinations.
+
+Valid credentials will be saved to valid_proxies.txt.
+
+📈 Example Output
+txt
+Копировать
+Редактировать
+192.168.0.1 admin admin123
+10.0.0.1 root toor
+⚠️ Disclaimer
+This tool is intended for educational and authorized security testing purposes only.
+Do not use it against systems you do not own or have explicit permission to test.
+
+📬 Contact
+Feel free to contribute or open an issue on GitHub if you'd like to improve this tool
