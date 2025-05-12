@@ -1,0 +1,44 @@
+This is a powerful Python tool for automatically checking login credentials across various server ports (SSH, HTTP, and more). Ideal for system administrators, penetration testers, and IT professionals.
+
+🔧 Features:
+Checks SSH access (port 22) using paramiko.
+
+Checks HTTP access (ports 80 and 443) with basic auth via aiohttp.
+
+Verifies if various ports are open using socket (e.g., 22, 80, 443, 3389, 1080, 8080, etc.).
+
+Asynchronous and multithreaded server scanning.
+
+GUI file picker for selecting server list (.txt).
+
+Compatible with Windows 8.1 and earlier.
+
+Real-time progress bar using tqdm.
+
+Automatically saves valid credentials to valid_proxies.txt.
+
+📁 Input File Format:
+A simple .txt file with IP addresses or IP:Port combinations, e.g.:
+
+makefile
+Копировать
+Редактировать
+192.168.0.1
+192.168.0.2:22
+10.0.0.1:443
+🚀 How to Use:
+Install the required libraries:
+
+bash
+Копировать
+Редактировать
+pip install paramiko aiohttp tqdm
+Run the script:
+
+bash
+Копировать
+Редактировать
+python script_name.py
+Choose your server list file in the dialog window.
+
+Wait for the scan to complete — results will be saved to valid_proxies.txt
